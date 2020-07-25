@@ -1,7 +1,17 @@
-// const title = document.getElementById("title");
-// const title = document.querySelector(".title"); // 클래스로 찾고 싶으면
-const title = document.querySelector("#title"); // id로 찾고 싶으면
+const title = document.querySelector("#title");
 
-title.innerHTML = "Hi! From JS";
-title.style.color = "red";
-document.title = "I own you now";
+const CLICKED_CLASS = "clicked"
+
+function handleClick(){
+    const currentClass = title.className;
+    if(currentClass !== CLICKED_CLASS){
+        title.className = CLICKED_CLASS;
+    }else{
+        title.className = "";
+    }
+}
+
+function init() {
+    title.addEventListener("click", handleClick);
+}
+init();
